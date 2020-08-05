@@ -5,9 +5,7 @@
         <group>
             <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/web/index.html</file>
             <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/web/Error.jsp</file>
-            <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/web/css/style.css</file>
-            <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/src/java/Controlador/Conexion.java</file>
-            <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/src/java/Controlador/Usuario.java</file>
+            <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/src/java/Controlador/Producto.java</file>
             <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/src/java/Servlet/VerificarUsuario.java</file>
         </group>
     </open-files>
