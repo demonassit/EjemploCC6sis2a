@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/web/index.html</file>
-            <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/web/Error.jsp</file>
+            <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/src/java/Controlador/DetalleVenta.java</file>
+            <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/src/java/Controlador/Venta.java</file>
             <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/src/java/Controlador/Producto.java</file>
-            <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/src/java/Servlet/VerificarUsuario.java</file>
+            <file>file:/D:/Proyectos%20Java/JSPEjemploCC6sis2a/src/java/Controlador/Usuario.java</file>
         </group>
     </open-files>
 </project-private>
