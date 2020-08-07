@@ -5,12 +5,19 @@
  */
 package Servlet;
 
+import Controlador.DetalleVenta;
+import Controlador.Producto;
+import Controlador.Usuario;
+import Controlador.Venta;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
+import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,15 +39,45 @@ public class FinalizarCompra extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet FinalizarCompra</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet FinalizarCompra at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            HttpSession sessionok = request.getSession();
+            //vamos a hacer un objeto de fecha
+            Date dia = new Date();
+            //el objeto del vector del detalle de la venta
+            Vector<DetalleVenta> vectorDetalle = (Vector<DetalleVenta>)sessionok.getAttribute("detalleVenta");
+            Vector<Producto> stockProducto = (Vector<Producto>)sessionok.getAttribute("stockProducto");
+            //creamos el objeto del producto
+            Producto prod = new Producto();
+            double totalPagar = 0;
+            
+            //para saber cuanto vamos a pagar hay que recorrer toda la lista del detalle de la venta de los productos
+            for(DetalleVenta dv : vectorDetalle){
+                totalPagar += dv.getDetVenta_Subtotal();
+            }
+            
+            //obtenemos al usuario
+            Usuario usuario = new Usuario();
+            //obtenemos la venta
+            Venta venta = new Venta();
+            
+            //enviamos los parametros del usuario y de la venta
+            venta.setUsuario_Codigo(usuario.getUsuario_Codigo());
+            venta.setVenta_Fecha(dia.toString());
+            venta.setVenta_TotalPagar(totalPagar);
+            
+            //ahora verificamos que se registre la venta y actualizamos el stock al final
+            boolean registrarVenta = venta.registrarVenta(venta, vectorDetalle);
+            boolean actualizarVenta = prod.actualizarStock(stockProducto);
+            
+            if(registrarVenta != actualizarVenta){
+                response.sendRedirect("Mensaje.jsp");
+            }else{
+                response.sendRedirect("Error.jsp");
+            }
+
+            
+            
+            
+            
         }
     }
 
