@@ -8,6 +8,10 @@
         <servlet-name>AgregarCarrito</servlet-name>
         <servlet-class>Servlet.AgregarCarrito</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FinalizarCompra</servlet-name>
+        <servlet-class>Servlet.FinalizarCompra</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VerificarUsuario</servlet-name>
         <url-pattern>/VerificarUsuario</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>AgregarCarrito</servlet-name>
         <url-pattern>/AgregarCarrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FinalizarCompra</servlet-name>
+        <url-pattern>/FinalizarCompra</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
